@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cbeu2tn0xhuo8"]
+
+[ext_resource type="Texture2D" uid="uid://c6mantfnf60un" path="res://Sprites/Background/Bg2.png" id="1_8j60k"]
+[ext_resource type="Texture2D" uid="uid://cg42jb4kujjay" path="res://Sprites/Background/Bg1.png" id="1_go701"]
+[ext_resource type="PackedScene" uid="uid://c72sicyh7nvb2" path="res://Scenes/player.tscn" id="2_go701"]
+[ext_resource type="Script" uid="uid://biw2qn0obmh4o" path="res://Script/player2.gd" id="3_5a7ea"]
+[ext_resource type="Script" uid="uid://c4uhfpjb0h3ne" path="res://Scenes/player.gd" id="4_fo5ed"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vm60q"]
+distance = -36.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syep0"]
+size = Vector2(6412.5, 6.666668)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(20, 1437)
+
+[node name="World" type="Node2D" unique_id=1007802965]
+scale = Vector2(0.5, 0.5)
+
+[node name="BG3" type="Sprite2D" parent="." unique_id=1312218582]
+position = Vector2(3840, -360)
+scale = Vector2(2, 2)
+texture = ExtResource("1_8j60k")
+flip_h = true
+
+[node name="BG2" type="Sprite2D" parent="." unique_id=2121791917]
+position = Vector2(1280, -360)
+scale = Vector2(2, 2)
+texture = ExtResource("1_8j60k")
+
+[node name="BG4" type="Sprite2D" parent="." unique_id=826224037]
+position = Vector2(3840, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("1_go701")
+flip_h = true
+
+[node name="BG" type="Sprite2D" parent="." unique_id=668826065]
+position = Vector2(1280, 360)
+scale = Vector2(2, 2)
+texture = ExtResource("1_go701")
+
+[node name="Player" parent="." unique_id=691214364 instance=ExtResource("2_go701")]
+position = Vector2(78, 538)
+script = ExtResource("4_fo5ed")
+action_prefix = ""
+controlled = true
+acceleration = 4000.0
+friction = 5000.0
+air_control = 0.6
+gravity = 3000.0
+fall_gravity_multiplier = 1.6
+max_fall_speed = 1800.0
+jump_strength = 1000.0
+jump_cut = 0.4
+coyote_time = 0.1
+jump_buffer_time = 0.1
+
+[node name="Player2" parent="." unique_id=370637430 instance=ExtResource("2_go701")]
+position = Vector2(84, -182.00002)
+script = ExtResource("3_5a7ea")
+action_prefix = "p2_"
+controlled = true
+acceleration = 4000.0
+friction = 5000.0
+air_control = 0.6
+gravity = 3000.0
+fall_gravity_multiplier = 1.6
+max_fall_speed = 1800.0
+jump_strength = 1000.0
+jump_cut = 0.4
+coyote_time = 0.1
+jump_buffer_time = 0.1
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1310243926]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1756158172]
+position = Vector2(60, 646)
+shape = SubResource("WorldBoundaryShape2D_vm60q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="floor" unique_id=350411330]
+position = Vector2(2565, -29)
+scale = Vector2(0.8, 1.5)
+shape = SubResource("RectangleShape2D_syep0")
+
+[node name="wallRight" type="CollisionShape2D" parent="floor" unique_id=945835136]
+position = Vector2(5092, 2)
+shape = SubResource("RectangleShape2D_jjvhh")
+
+[node name="wallLeft" type="CollisionShape2D" parent="floor" unique_id=1606121390]
+position = Vector2(20, -2)
+shape = SubResource("RectangleShape2D_jjvhh")

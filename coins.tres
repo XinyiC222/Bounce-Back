@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bo0365j7dg08w"]
+
+[ext_resource type="Texture2D" uid="uid://b1gntflpxhokr" path="res://Sprites/coinf.png" id="1_umq18"]
+[ext_resource type="Texture2D" uid="uid://5ppthsi02v36" path="res://Sprites/coind.png" id="2_62guy"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_umq18")
+}],
+"loop": 1,
+"name": &"red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_62guy")
+}],
+"loop": 1,
+"name": &"yellow",
+"speed": 5.0
+}]

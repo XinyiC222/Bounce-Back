@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5rfhlnscju8o"]
+
+[ext_resource type="Script" uid="uid://cmd5vcvqx51lw" path="res://Script/hazards.gd" id="1_gwqs2"]
+[ext_resource type="Texture2D" uid="uid://c3b26lkhtjrye" path="res://Sprites/spikes.png" id="2_0qgod"]
+
+[node name="harzards" type="Area2D" unique_id=1218004427]
+position = Vector2(278, -164)
+script = ExtResource("1_gwqs2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=925665245]
+position = Vector2(2398, 90)
+texture = ExtResource("2_0qgod")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=408711830]
+position = Vector2(2398, 90)
+polygon = PackedVector2Array(-6, -10, -6, -7.799999, -42, 32.199997, -42, 39.1, -39, 41.1, -39, 43, 35.1, 43, 37.1, 40, 39, 40, 39, 31.199997, 10, 0.099998474, 10, -1.9000015, 3, -7.9000015, 3, -10)
